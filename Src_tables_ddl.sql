@@ -120,4 +120,65 @@ VALUES (304, 3, TO_DATE('2022-03-15', 'YYYY-MM-DD'), 200.00);
 INSERT INTO Transaction (Transaction_id, Customer_id, Transaction_Date, Amount)
 VALUES (505, 2, TO_DATE('2024-03-20', 'YYYY-MM-DD'), 120.75);
 
+--------
+CREATE TABLE cust (
+    customer_id INT PRIMARY KEY,
+    customer_name VARCHAR(255),
+    age INT,
+    gender VARCHAR(10)
+);
+
+INSERT INTO cust (customer_id, customer_name, age, gender)
+VALUES (1, 'John Doe', 30, 'Male');
+
+INSERT INTO cust (customer_id, customer_name, age, gender)
+VALUES (2, 'Jane Smith', 25, 'Female');
+
+INSERT INTO cust (customer_id, customer_name, age, gender)
+VALUES (3, 'Alice Johnson', 35, 'Female');
+
+INSERT INTO cust (customer_id, customer_name, age, gender)
+VALUES (4, 'Bob Brown', 40, 'Male');
+
+
+CREATE TABLE orders (
+    order_id INT PRIMARY KEY,
+    customer_id INT,
+    order_date DATE,
+    total_amount DECIMAL(10, 2),
+    FOREIGN KEY (customer_id) REFERENCES customers(customer_id)
+);
+
+INSERT INTO orders (order_id, customer_id, order_date, total_amount) 
+VALUES (101, 1, TO_DATE('2023-01-15', 'YYYY-MM-DD'), 150.50);
+
+INSERT INTO orders (order_id, customer_id, order_date, total_amount) 
+VALUES (102, 2, TO_DATE('2022-02-20', 'YYYY-MM-DD'), 200.25);
+
+INSERT INTO orders (order_id, customer_id, order_date, total_amount) 
+VALUES (103, 3, TO_DATE('2023-03-10', 'YYYY-MM-DD'), 180.75);
+
+INSERT INTO orders (order_id, customer_id, order_date, total_amount) 
+VALUES (104, 4, TO_DATE('2023-04-05', 'YYYY-MM-DD'), 300.00);
+
+INSERT INTO orders (order_id, customer_id, order_date, total_amount) 
+VALUES (105, 1, TO_DATE('2022-05-12', 'YYYY-MM-DD'), 175.80);
+
+INSERT INTO orders (order_id, customer_id, order_date, total_amount) 
+VALUES (106, 2, TO_DATE('2021-06-18', 'YYYY-MM-DD'), 220.40);
+
+INSERT INTO orders (order_id, customer_id, order_date, total_amount) 
+VALUES (107, 3, TO_DATE('2023-07-22', 'YYYY-MM-DD'), 190.30);
+
+INSERT INTO orders (order_id, customer_id, order_date, total_amount) 
+VALUES (108, 4, TO_DATE('2023-08-30', 'YYYY-MM-DD'), 250.60);
+
+INSERT INTO orders (order_id, customer_id, order_date, total_amount) 
+VALUES (109, 4, TO_DATE('2021-08-30', 'YYYY-MM-DD'), 250.60);
+
+INSERT INTO orders (order_id, customer_id, order_date, total_amount) 
+VALUES (110, 4, TO_DATE('2024-01-30', 'YYYY-MM-DD'), 250.60);
+
+INSERT INTO orders (order_id, customer_id, order_date, total_amount) 
+VALUES (111, 4, TO_DATE('2023-08-30', 'YYYY-MM-DD'), 250.60);
 
