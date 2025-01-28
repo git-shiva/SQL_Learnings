@@ -51,3 +51,19 @@ FROM
     orders o ON o.customer_id = c.customer_id
     group by c.gender
     ;
+
+--Q4 Write an SQL query to find out the total sales revenue generated for each month in the year 2023.
+
+S4: SELECT 
+    SUM(price_per_unit * quantity) AS total_revenue,
+    EXTRACT(MONTH FROM order_date) AS month,
+    EXTRACT(YEAR FROM order_date) AS year
+FROM 
+    sales
+WHERE 
+    EXTRACT(YEAR FROM order_date) = 2023
+GROUP BY 
+    EXTRACT(MONTH FROM order_date), 
+    EXTRACT(YEAR FROM order_date)
+    ORDER BY 
+    month;
