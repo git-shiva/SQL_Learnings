@@ -23,7 +23,7 @@ WHERE rank_price = 1;
 
 -- Q.2 Write a SQL query to find total transaction amt group by each customer filter with current year 
 -- put where condition to check if the transaction are current year
-S1:
+S2:
 SELECT 
     c.customer_id,c.customer_name, 
     SUM(t.amount) AS total_txn_amnt
@@ -36,3 +36,18 @@ WHERE
     EXTRACT(YEAR FROM t.transaction_date) = 2024
 GROUP BY 
     c.customer_id,c.customer_name;
+
+------------------------Day2
+--Q3: Write an SQL query to find the average order amount for male and female customers separately return the results with 2 DECIMAL.
+
+S3: select c.gender,to_char(avg(o.total_amount),99999.99) avg_order_amnt from cust c join orders o on c.customer_id=o.customer_id group by c.gender;
+
+AS3: select * from customers;
+SELECT 
+    c.gender, round(avg(o.total_amount),2) AS total_order_amt
+FROM
+    cust c
+        JOIN
+    orders o ON o.customer_id = c.customer_id
+    group by c.gender
+    ;
