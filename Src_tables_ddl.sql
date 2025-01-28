@@ -182,3 +182,34 @@ VALUES (110, 4, TO_DATE('2024-01-30', 'YYYY-MM-DD'), 250.60);
 INSERT INTO orders (order_id, customer_id, order_date, total_amount) 
 VALUES (111, 4, TO_DATE('2023-08-30', 'YYYY-MM-DD'), 250.60);
 
+------------------
+CREATE TABLE sales (
+    order_id INT PRIMARY KEY,
+    order_date DATE,
+    product_id INT,
+    quantity INT,
+    price_per_unit DECIMAL(10, 2)
+);
+INSERT INTO sales (order_id, order_date, product_id, quantity, price_per_unit) 
+VALUES (1, TO_DATE('2022-03-10', 'YYYY-MM-DD'), 101, 2, 15.00);
+
+INSERT INTO sales (order_id, order_date, product_id, quantity, price_per_unit) 
+VALUES (2, TO_DATE('2022-04-05', 'YYYY-MM-DD'), 102, 1, 25.50);
+
+INSERT INTO sales (order_id, order_date, product_id, quantity, price_per_unit) 
+VALUES (3, TO_DATE('2023-01-15', 'YYYY-MM-DD'), 103, 3, 10.75);
+
+INSERT INTO sales (order_id, order_date, product_id, quantity, price_per_unit) 
+VALUES (4, TO_DATE('2023-02-20', 'YYYY-MM-DD'), 104, 2, 30.20);
+
+INSERT INTO sales (order_id, order_date, product_id, quantity, price_per_unit) 
+VALUES (5, TO_DATE('2022-05-12', 'YYYY-MM-DD'), 105, 4, 12.80);
+
+INSERT INTO sales (order_id, order_date, product_id, quantity, price_per_unit) 
+VALUES (6, TO_DATE('2023-06-18', 'YYYY-MM-DD'), 106, 2, 22.40);
+
+INSERT INTO sales (order_id, order_date, product_id, quantity, price_per_unit) 
+VALUES (7, TO_DATE('2023-07-22', 'YYYY-MM-DD'), 107, 1, 45.30);
+
+INSERT INTO sales (order_id, order_date, product_id, quantity, price_per_unit) 
+VALUES (8, TO_DATE('2021-08-30', 'YYYY-MM-DD'), 108, 3, 20.60);
