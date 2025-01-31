@@ -67,3 +67,6 @@ GROUP BY
     EXTRACT(YEAR FROM order_date)
     ORDER BY 
     month;
+-----------------Day3
+Q5: cumulative sum of sal
+select sal,sum(sal) over(order by empno) as cum_sum from emp;
